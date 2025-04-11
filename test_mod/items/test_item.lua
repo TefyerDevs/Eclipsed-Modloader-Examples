@@ -5,9 +5,9 @@ _G["use"] = function(hand , world, player) -- use not on a block
     end
 end
 
-_G["useOn"] = function(context,world) -- use on a block
-    local player = context:getPlayer()
-    local blockPos = context:getClickedPos();
+_G["useOn"] = function(playerWrapper,world) -- use on a block
+    local player = playerWrapper:getPlayer()
+    local blockPos = playerWrapper:getContext():getClickedPos();
     world:summonEntity("minecraft:pig", player, blockPos)
-    print("Summoned a Pig at: " .. player:position():toString())
+    playerWrapper:sendMessage("Summoned a Pig at: " .. player:position():toString())
 end

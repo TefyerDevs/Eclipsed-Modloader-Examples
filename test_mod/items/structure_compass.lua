@@ -1,8 +1,7 @@
-_G["useOn"] = function(context,world,blocks)
-    local player = context:getPlayer()
-    local level = context:getLevel()
-    local blockPos = context:getClickedPos();
+_G["useOn"] = function(playerWrapper,world,blocks)
+    local level = playerWrapper:getContext():getLevel()
+    local blockPos = playerWrapper:getContext():getClickedPos();
 
 
-    print(level:getBlockState(blockPos):getBlock():getName()) -- just prints the block name
+    playerWrapper:sendMessage(level:getBlockState(blockPos):getBlock():getName()) -- just prints the block name
 end
