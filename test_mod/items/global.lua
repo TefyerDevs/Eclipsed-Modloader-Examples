@@ -23,3 +23,19 @@ function indexOf(array, value)
     end
     return nil
 end
+
+function containsId(keyArr, valueArr, key)
+    return keyArr[indexOf(valueArr,key)] ~= nil
+end
+
+function containsValue(keyArr, valueArr, key)
+    return valueArr[indexOf(keyArr,key)] ~= nil
+end
+
+function getKey(keyArr, valueArr, key)
+    return keyArr[indexOf(valueArr,key)]
+end
+
+function getValue(keyArr, valueArr, key)
+    return valueArr[indexOf(keyArr,key)]
+end

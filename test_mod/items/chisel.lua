@@ -1,56 +1,19 @@
-
-chiselMapBlockId = nil
-chiselMapBlockValue = nil
-
-function containsId(value)
-    return chiselMapBlockId[indexOf(chiselMapBlockValue,value)] ~= nil
-end
-
-function containsValue(value)
-    return chiselMapBlockValue[indexOf(chiselMapBlockId,value)] ~= nil
-end
-
-t = {
-pig = "pig",
-cow = "big cow",
-sheep  = "white sheep" }
-
-function getKey(key)
-    return chiselMapBlockId[indexOf(chiselMapBlockValue,key)]
-end
-
-function getValue(key)
-    return chiselMapBlockValue[indexOf(chiselMapBlockId,key)]
-end
-
 _G["useOn"] = function(context,world,blocks)
     local level = context:getLevel()
+    local player = context:getPlayer()
     local clickedBlock = level:getBlockState(context:getClickedPos()):getBlock()
 
-    chiselMapBlockId = {
-                blocks.STONE,
-                blocks.END_STONE,
-                blocks.DEEPSLATE,
-                blocks.IRON_BLOCK
-            }
-
-    chiselMapBlockValue = {
-                blocks.STONE_BRICKS,
-                blocks.END_STONE_BRICKS,
-                blocks.DEEPSLATE_BRICKS,
-                blocks.DIAMOND_BLOCK
-            }
-
-
-    if containsId(clickedBlock)  then
+    if clickedBlock == blocks.IRON_BLOCK  then
         if not level.isClientSide then
-             level:setBlockAndUpdate(context:getClickedPos(), getValue(clickedBlock):defaultBlockState())
+             level:setBlockAndUpdate(context:getClickedPos(),
+              blocks.DIAMOND_BLOCK:defaultBlockState())
         end
     end
 
-    if containsValue(clickedBlock)  then
+    if  clickedBlock == blocks.DIAMOND_BLOCK  then
         if not level.isClientSide then
-             level:setBlockAndUpdate(context:getClickedPos(), getKey(clickedBlock):defaultBlockState())
+             level:setBlockAndUpdate(context:getClickedPos(),
+             blocks.IRON_BLOCK:defaultBlockState())
         end
     end
 end
