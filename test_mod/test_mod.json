@@ -1,0 +1,9 @@
+{
+  "name": "Test Mod",
+  "modId": "test_mod",
+  "description": [
+    "This is a simple mod to test the modloader."
+  ],
+  "version": "0.0.1",
+  "global_lua": "items/global.lua"
+}

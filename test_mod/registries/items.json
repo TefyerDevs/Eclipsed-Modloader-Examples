@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "id": "test_item",
+      "name": "Test Item",
+      "type": "lua",
+      "lua": "items/test_item"
+    },
+    {
+      "id": "structure_compass",
+      "name": "Structure Compass",
+      "type": "lua",
+      "lua": "items/structure_compass"
+    },
+    {
+      "id": "chisel",
+      "name": "chisel",
+      "type": "lua",
+      "lua": "items/chisel"
+    }
+  ]
+}

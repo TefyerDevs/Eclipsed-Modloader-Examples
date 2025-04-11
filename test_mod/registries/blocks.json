@@ -1,0 +1,9 @@
+{
+  "blocks": [
+    {
+      "id": "test_block",
+      "type": "lua",
+      "lua":"blocks/test_block"
+    }
+  ]
+}
