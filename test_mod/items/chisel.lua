@@ -3,17 +3,17 @@ _G["useOn"] = function(context,world,blocks)
     local player = context:getPlayer()
     local clickedBlock = level:getBlockState(context:getClickedPos()):getBlock()
 
-    if clickedBlock == blocks.IRON_BLOCK  then
+    if clickedBlock == blocks.STONE  then
         if not level.isClientSide then
              level:setBlockAndUpdate(context:getClickedPos(),
-              blocks.DIAMOND_BLOCK:defaultBlockState())
+              blocks.STONE_BRICKS:defaultBlockState())
         end
     end
 
-    if  clickedBlock == blocks.DIAMOND_BLOCK  then
+    if  clickedBlock == blocks.STONE_BRICKS  then
         if not level.isClientSide then
              level:setBlockAndUpdate(context:getClickedPos(),
-             blocks.IRON_BLOCK:defaultBlockState())
+             blocks.STONE:defaultBlockState())
         end
     end
 end
